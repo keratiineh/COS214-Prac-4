@@ -2,16 +2,20 @@
 #define COMPONENT_H
 
 #include <string>
+#include <vector>
 
 class Iterator;
 using namespace std;
 
 
 class Component{
+    friend class FullTraversalIterator;
+    friend class SelectiveTraversalIterator;
     protected:
 
         string id;
         string name;
+        virtual vector<Component*> getChildrenForTraversal() const {return{};}
     public:
 
         Component(const string& id, const string& name);
