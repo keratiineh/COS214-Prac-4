@@ -8,7 +8,7 @@ We split the prac into 3 sections labelled member 1, 2, and 3
 
 # Member 3 
 
-# Member 3 Files
+## Member 3 Files
 
 `ComponentDecorator.h/.cpp` - Abstract Decorator, wraps a component.
 `VFXDecorator`, `StuntCoordinationDecorator`, `SecurityDecorator`, `InsuranceDecorator` (each .h/.cpp) - Concrete decorators, all stackable in any order.
