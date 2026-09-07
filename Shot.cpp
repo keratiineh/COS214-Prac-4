@@ -13,6 +13,14 @@ void Shot::transition() {
     }
 }
 
+void Shot::recordTake() {
+    ++takesRecorded;
+}
+
+int Shot::getTakesRecorded() const {
+    return takesRecorded;
+}
+
 void Shot::setState(ShotState* state) {
     delete currentState;
     currentState = state;

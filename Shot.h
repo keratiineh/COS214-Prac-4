@@ -16,6 +16,7 @@
 class Shot : public Component {
 private:
     ShotState* currentState;
+    int takesRecorded = 0;
 
 public:
     Shot(const std::string& id, const std::string& name);
@@ -29,6 +30,8 @@ public:
     void setState(ShotState* state);
 
     std::string getStatus() const override;
+    void recordTake();  //called each time a take is shot
+    int getTakeesRecorded() const; //used by ShootingState's guard
 
     Iterator* createIterator() const override; //due to shot also being a Leaf (but it has no children to iterate over)
     ~Shot() override;

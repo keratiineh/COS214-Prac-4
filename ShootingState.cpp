@@ -1,8 +1,12 @@
 #include "ShootingState.h"
 #include "CompletedState.h"
+#include <iostream>
 
 ShotState* ShootingState::checkTransition(Shot* shot) {
-    (void)shot;
+    if (shot->getTakesRecorded() < 1) {
+        std::cout << "Cannot complete: no takes recorded yet.\n";
+        return nullptr;
+    }
     return new CompletedState();
 }
 
