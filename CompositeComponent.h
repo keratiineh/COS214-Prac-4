@@ -20,8 +20,10 @@ class CompositeComponent : public Component{
         const vector<Component*>& getChildren() const;
         string getStatus() const override;
 
-        Iterator* createIterator() const override;
-        Iterator* createIterator(TraversalType type) const;
+        Iterator* createIterator() override;
+        Iterator* createIterator(TraversalType type, string criteria);
+    protected:
+        vector<Component*> getChildrenForTraversal() const override;
 
 
 
