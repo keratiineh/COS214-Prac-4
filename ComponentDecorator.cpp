@@ -1,7 +1,7 @@
 #include "ComponentDecorator.h"
 
 ComponentDecorator::ComponentDecorator(Component* item) 
-    : Component(item->getId(), item->getId()), wrapped(item) {}
+    : Component(item->getId(), item->getName()), wrapped(item) {}
 
 ComponentDecorator::~ComponentDecorator () {
     delete wrapped;
