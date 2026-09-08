@@ -2,7 +2,17 @@
 
 We split the prac into 3 sections labelled member 1, 2, and 3
 
+Hierarchical work processing system for a film production domain. A production is organised into Units and Sequences (nested groups of CompositeComponent), which contain individual Shots (leaves). A shot moves through a filming lifecycle and can have optional responsibilities (VFX, stunt coordination, security, insurance) atttached at runtime.
+
+Four GoF patterns are used together as one system:  
+- Composite
+- Iterator
+- State
+- Decorator
+
 # Member 1
+
+
 
 # Member 2
 
@@ -27,4 +37,17 @@ make
 
 docker build -t taskforge .
 docker run --rm -it taskforge
+
+# GDB
+
+docker run --rm -it taskforge bash
+gdb ./taskforge
+(gdb) break main
+(gdb) run
+(gdb) next
+
+# Valgrind
+
+docker run --rm -it taskforge bash
+valgrind --leak-check=full --show-leak-kinds=all ./taskforge
 
