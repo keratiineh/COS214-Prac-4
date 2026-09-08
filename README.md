@@ -38,7 +38,7 @@ single spot. `ShotState::checkTransition()` is the one action method: each
 concrete state returns a freshly-allocated instance of the next state if a
 transition is legal, or `nullptr` if not (e.g. `ApprovedState` is terminal).
 Lifecycle order: `ScheduleState -> ShootingState -> CompletedState ->
-InPostState -> ApprovedState`.
+InPostState -> ApprovedState`. `ShootingState` additionally guards its transition on `takesRecorded >= 1`, rejecting the move to `Completed` until at least one take has been recorded.
 
 # Member 3
 
