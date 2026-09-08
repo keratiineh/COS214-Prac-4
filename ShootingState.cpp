@@ -1,5 +1,6 @@
 #include "ShootingState.h"
 #include "CompletedState.h"
+#include "Shot.h"
 #include <iostream>
 
 ShotState* ShootingState::checkTransition(Shot* shot) {
