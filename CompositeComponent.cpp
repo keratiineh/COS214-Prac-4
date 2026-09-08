@@ -48,20 +48,24 @@ string CompositeComponent::getStatus() const {
     
 }
 
-Iterator* CompositeComponent::createIterator() const {
-    return createIterator(TraversalType::FULL);
+Iterator* CompositeComponent::createIterator(){
+    return createIterator(TraversalType::FULL, "");
 
 }
 
-Iterator* CompositeComponent::createIterator(TraversalType type) const {
+Iterator* CompositeComponent::createIterator(TraversalType type, string criteria) {
     switch (type)
     {
     case TraversalType::SELECTIVE:
-        return new SelectiveTraversalIterator(this);
+        return new SelectiveTraversalIterator(this, criteria);
         break;
     case TraversalType::FULL:
     default:
         return new FullTraversalIterator(this);
     }
     
+}
+
+vector<Component*> CompositeComponent::getChildrenForTraversal() const {
+    return children;
 }

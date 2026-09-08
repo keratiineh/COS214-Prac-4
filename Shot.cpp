@@ -30,7 +30,7 @@ std::string Shot::getStatus() const {
     return currentState->getName();
 }
 
-Iterator* Shot::createIterator() const {
+Iterator* Shot::createIterator() {
     //a leaf has nothing to iterate over
     return nullptr;
 }

@@ -11,6 +11,6 @@ std::string ComponentDecorator::getStatus() const {
     return wrapped->getStatus();
 }
 
-Iterator* ComponentDecorator::createIterator() const {
+Iterator* ComponentDecorator::createIterator() {
     return wrapped->createIterator();
 }

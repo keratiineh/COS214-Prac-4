@@ -13,7 +13,7 @@ class ComponentDecorator : public Component {
         explicit ComponentDecorator(Component* item);
         ~ComponentDecorator() override;
         std::string getStatus() const override;
-        Iterator* createIterator() const override;
+        Iterator* createIterator() override;
 };
 
 #endif

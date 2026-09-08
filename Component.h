@@ -22,7 +22,7 @@ class Component{
         string getId() const;
         string getName() const;
         virtual string getStatus() const = 0;
-        virtual Iterator* createIterator() const = 0;
+        virtual Iterator* createIterator()  = 0;
         virtual ~Component();
 
 

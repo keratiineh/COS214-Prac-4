@@ -15,3 +15,7 @@ string Component::getId() const{
 string Component::getName() const {
     return name;
 }
+
+Component::~Component(){
+    
+}
